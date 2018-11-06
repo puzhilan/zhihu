@@ -1,0 +1,40 @@
+<!--pages/contact/contact.wxml-->
+<view class="divider"></view>
+<view class="cell">
+    <form bindsubmit="submitHandle">
+        <view class="cell-item arrow">
+            <text>添加用户信息</text>
+        </view>
+        <view class="cell-item arrow">
+            <input type="text" name="uname" placeholder="请输入用户名"></input>
+        </view>
+        <view class="cell-item arrow">
+            <input type="text" name="upwd" placeholder="请输入密码"></input>
+        </view>
+        <view class="cell-item arrow">
+            <button formType="submit">注册</button>
+        </view>
+    </form>
+</view>
+<view class="divider"></view>
+<view class="cell">
+    <view class="cell-item">
+        <text>表单的其他组件</text>
+    </view>
+    <view class="cell-item">
+        <checkbox-group>
+            <checkbox checked>红烧肉</checkbox>
+            <checkbox>鱼香肉丝</checkbox>
+        </checkbox-group>
+    </view>
+    <view class="cell-item">
+        <radio-group>
+            <radio name="r" checked value="male"></radio>男
+            <radio name="r" checked value="female"></radio>女
+        </radio-group>
+    </view>
+    <view class="cell-item">
+        <switch checked name="s" />
+        <switch name="s" />
+    </view>
+</view>

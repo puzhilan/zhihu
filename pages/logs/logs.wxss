@@ -1,0 +1,59 @@
+/*轮播图*/
+.slider,.slider image,.slider swiper{
+  width:100%;
+  height:390rpx;
+}
+/*弹性布局*/
+.index-nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+.index-nav .nav-item{
+  height:200rpx;
+  width:33.33333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-bottom:1rpx solid #ccc;
+  position: relative
+}
+.index-nav .nav-item:nth-child(3n){
+  border-right: 0 none;
+}
+.index-nav .nav-item image{
+  width:80rpx;
+  height:80rpx;
+}
+
+
+/*.index-nav .nav-item::after{
+  content: "";
+  width:1rpx;
+  height:100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #ccc;
+}
+.index-nav .nav-item:nth-child(3n)::after{
+  width:0;
+}*/
+
+
+/*入口样式*/
+.index-enter{
+  margin-top: 20rpx;
+  display:flex;
+}
+.index-enter .enter-item{
+  width:50%;
+  justify-content:center;
+  display:flex;
+}
+.index-enter image{
+  width:320rpx;
+  height:178rpx;
+}

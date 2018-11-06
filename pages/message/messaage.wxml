@@ -1,0 +1,9 @@
+<!--pages/message/messaage.wxml-->
+<!--信息列表-->
+<view class="card" wx:for="{{infoList}}">
+    <text class="card-title">{{item.title}}</text>
+    <text class="card-date">{{item.date}}</text>
+    <image src="{{item.img_url}}" class="card-img" mode="aspectFill" lazy-load></image>
+    <text class="card-desc">{{item.des}}</text>
+    <text class="card-read arrow">查看详情</text>
+</view>

@@ -1,0 +1,41 @@
+/* pages/message/messaage.wxss */
+/*网页背景灰色*/
+page{
+    background-color:#f1f1f1;
+}
+/*卡片区域块中布局*/
+.card{
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-radius:10rpx;
+    display: flex;
+    flex-direction: column;
+    margin:60rpx 20rpx;
+    padding:30rpx;
+}
+.card-title{
+    font-size: 20px;
+    margin-bottom: 20rpx;
+}
+.card-date{
+    font-size: 14px;
+    color:#cccccc;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20rpx;
+    margin-bottom: 20rpx;
+}
+.card-img{
+    height:300rpx;
+    weight:100%;
+}
+.card-desc{
+    color:#333;
+    font-size: 16px;
+    padding: 20rpx 0;
+    margin-bottom: 20rpx;
+    border-bottom: 1px solid #ccc;
+}
+.card-read{
+    font-size: 14px;
+    color:#666;
+}

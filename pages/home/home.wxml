@@ -1,0 +1,23 @@
+<!--pages/home/home.wxml-->
+<view>
+    {{message}}
+</view>
+<view wx:if="{{app=='home'}}">
+    home
+</view>
+<view wx:for="{{rows}}" wx:key="index">
+    {{item.id}}:{{item.name}}:{{index}}
+</view>
+<view wx:for="{{products}}" wx:key="lid">
+    <text>{{item.id}}</text>
+    <text>{{item.pic}}</text>
+    
+    <image src="{{item.pic}}" mode="aspecFill" lazy-load width="230" height="120"></image>
+</view>
+<text>跳转不同组件</text>
+<navigator url="/pages/news/news?id=9">
+    跳转到新闻组件
+</navigator>
+<view bindtap="jumpPage">
+    代码方式跳转组件
+</view>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{text-align: center}
+    #chosen{
+      border:1px solid red;
+      width:210px;min-height: 110px;margin:0 auto;
+    }
+  </style>
+</head>
+<body>
+      <h1>选择你喜欢小飞机</h1>
+      <div id="chosen">
+        <!--目标区域-->
+        <img src="img/p0.png" id="p0" />
+      </div>
+      <div id="list">
+        <!--列表区域-->
+        <img src="img/p3.png" id="p3" />
+        <img src="img/p4.png" id="p4" />
+        <img src="img/p5.png" id="p5" />
+      </div>
+      <script>
+        //功能一:拖动某架飞机到目标区域，则在上方显示该飞机 
+        //拖动源对象  #list > img
+        //拖动目标对象 #chosen
+        //不是删除指定飞机而是移动小飞机 
+        //1:获取源对象(3个)
+        var planeList = document.querySelectorAll("#list img");
+        //2:获取目标对象(1个 div)
+        var chosen = document.getElementById("chosen");
+        //3:创建全局变量
+        var pid = null;
+        //4:为源对象绑定3个事件
+        for(var i=0;i<planeList.length;i++){
+          var item = planeList[i];
+          item.ondragstart = function(){pid = this.id}
+          item.ondrag = function(){}
+          item.ondragend = function(){}
+        }
+        //5:为目标对象绑定4个事件(移动)
+        chosen.ondragenter = function(){}
+        chosen.ondragover = function(e){
+          e.preventDefault();
+        }
+        chosen.ondragleave = function(){}
+        var p0 = document.getElementById("p0");
+        var list = document.getElementById("list")
+        chosen.ondrop = function(){  
+          //隐藏问号飞机
+          p0.style.display = "none";
+          //根据之前保存被拖动飞机id,查找对应img元素
+          //并且移动目标区域
+          var p = document.getElementById(pid);
+          chosen.appendChild(p);
+          //若此时#chosen子元素数量己经为3个,
+          //将p0后那个小飞机重新移回 #list
+          if(chosen.children.length >= 3){
+              var n = p0.nextElementSibling;
+              list.appendChild(n);
+          }
+        }
+       //拖动 #chosen中的飞机到#list上方
+       //拖动源对象 #chosen > img
+       //拖动目对象 #list
+       list.ondragenter = function(){}
+       list.ondragover = function(e){e.preventDefault()}
+       list.ondragleave = function(){}
+       list.ondrop = function(){
+         //把拖动的小飞机移动 #list
+         var p = document.getElementById(pid);
+         list.appendChild(p);
+         p0.style.display = "block";
+       }
+      </script>
+</body>
+</html>
